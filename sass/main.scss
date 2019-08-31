@@ -119,6 +119,22 @@ h4{
 }
 
 /***Hero***/
+	#hero{
+		display:grid;
+		grid-template-columns: repeat(5,1fr);
+		grid-template-rows: repeat(3,1fr);
+
+		img{
+			grid-column: span 5;
+			grid-row: 1 / span 3;
+		}
+
+		h3{
+			grid-column: span 5;
+			grid-row: 1 / span 3;
+		}
+
+	}
 
 /**Footer**/
 

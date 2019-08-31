@@ -124,6 +124,29 @@ h4 {
 }
 
 /***Hero***/
+#hero {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+}
+
+#hero img {
+  grid-column: span 5;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1 / span 3;
+}
+
+#hero h3 {
+  grid-column: span 5;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  grid-row: 1 / span 3;
+}
+
 /**Footer**/
 footer {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(241, 236, 229, 0.5)), color-stop(98.44%, #E6DBC9));

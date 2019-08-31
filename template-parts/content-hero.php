@@ -1,7 +1,7 @@
 <?php 
 ///Advanced Custom Fields
-$author_story			= get_field('hero_background');
-$author_image			= get_field('hero_text');
+$hero_background			= get_field('hero_background');
+$hero_text			        = get_field('hero_text');
  ?>
 
 <div id="hero" data-type="background" data-speed="3">
