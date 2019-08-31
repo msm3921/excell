@@ -6,8 +6,9 @@
  */
 /***General***/
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-family: Montserrat, sans-serif;
   font-size: 16px;
+  background: #EDEDED;
 }
 
 .section-header {
@@ -92,19 +93,14 @@ h4 {
   margin: 10px;
   padding: 15px;
   text-align: right;
-  -ms-grid-column-align: end;
-      justify-self: end;
+  -ms-grid-column-align: top;
+      justify-self: top;
   -ms-flex-item-align: top;
       -ms-grid-row-align: top;
       align-self: top;
   -ms-grid-column: 2;
   -ms-grid-column-span: 2;
   grid-column: 2 / span 2;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 44px;
 }
 
 #home p {
@@ -134,17 +130,53 @@ h4 {
 }
 
 #hero img {
-  grid-column: span 5;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 3;
-  grid-row: 1 / span 3;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-#hero h3 {
-  grid-column: span 5;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 3;
-  grid-row: 1 / span 3;
+#hero h2 {
+  color: #fff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0;
+  font-weight: 300;
+  grid-column: 2 / -1;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+/*Summary*/
+#summary h4 {
+  color: #68292D;
+  padding: 30px 0px 0px 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#summary p {
+  padding: 10px 30px;
+  font-weight: bold;
+}
+
+/*List*/
+#list {
+  display: -ms-grid;
+  display: grid;
+}
+
+#list p {
+  color: #68292D;
+  padding: 0px 25px;
 }
 
 /**Footer**/

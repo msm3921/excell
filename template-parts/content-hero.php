@@ -11,5 +11,5 @@ $hero_text			        = get_field('hero_text');
 
             <?php endif; ?>
 
-            <h3><?php echo $hero_text?></h3>
+            <h2><?php echo $hero_text?></h2>
 </div> <!--hero-->
