@@ -6,18 +6,20 @@
  */
 
 $colors: (
+	background:#EDEDED,
 	text:#000000,
-	/*link:#c9302c,*/
+	white:#fff,
 	primary:#68292D,
 	primary2:rgba(104, 41, 45, 0.85),
-	header:#F1ECE5
+	header:#F1ECE5,
+	leadership:#636666
 );
 
  /***General***/
  html{
     font-family: Montserrat, sans-serif;
 	font-size: 16px;
-	background: #EDEDED;
+	background-color:map-get($colors,background);
 	}
 
 .section-header{
@@ -101,7 +103,7 @@ h4{
 		}
 
 		p{
-			color:#fff;
+			color:map-get($colors,white);
 			font-size: .75 em;
 			padding-left: 30px;
 			text-align: left;
@@ -127,7 +129,7 @@ h4{
 		}
 
 		h2{
-			color:#fff;
+			color:map-get($colors,white);
 			text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 			margin:0;
 			font-weight: 300;
@@ -143,19 +145,50 @@ h4{
 
 /*Summary*/	
 #summary{
-	h4{
-		color: map-get($colors ,primary);
-		padding:30px 0px 0px 15px;
-		text-transform: uppercase;
-		font-weight: bold;
+		h4{
+			font-size: 1.5em;
+			color: map-get($colors ,primary);
+			padding:30px 0px 0px 15px;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+
+		p{
+			padding:10px 30px;
+			font-weight: bold;
+		}
 	}
 
-	p{
-		padding:10px 30px;
-		font-weight: bold;
-	}
+/*Leadership*/	
+		#leadership{
+			background-color: map-get($colors ,leadership);
+			border-radius: 5px;
+
+			h4{
+				font-size: 1.5em;
+				color: map-get($colors ,primary);
+				padding:30px 0px 0px 15px;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+
+			h5,p{
+				color:map-get($colors,white);
+				text-transform: uppercase;
+				padding:10px 30px;
+			}
+
+			h5{
+				font-size: 1.15em;
+			}
+
+			p{
+				padding-left: 45px;
+			}
 
 }
+
+
 
 /*List*/
 #list{

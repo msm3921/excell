@@ -8,7 +8,7 @@
 html {
   font-family: Montserrat, sans-serif;
   font-size: 16px;
-  background: #EDEDED;
+  background-color: #EDEDED;
 }
 
 .section-header {
@@ -157,6 +157,7 @@ h4 {
 
 /*Summary*/
 #summary h4 {
+  font-size: 1.5em;
   color: #68292D;
   padding: 30px 0px 0px 15px;
   text-transform: uppercase;
@@ -166,6 +167,34 @@ h4 {
 #summary p {
   padding: 10px 30px;
   font-weight: bold;
+}
+
+/*Leadership*/
+#leadership {
+  background-color: #636666;
+  border-radius: 5px;
+}
+
+#leadership h4 {
+  font-size: 1.5em;
+  color: #68292D;
+  padding: 30px 0px 0px 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#leadership h5, #leadership p {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 10px 30px;
+}
+
+#leadership h5 {
+  font-size: 1.15em;
+}
+
+#leadership p {
+  padding-left: 45px;
 }
 
 /*List*/
