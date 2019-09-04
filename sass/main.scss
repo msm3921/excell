@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-$colors: (
+ $colors: (
 	background:#EDEDED,
 	text:#000000,
 	white:#fff,
@@ -60,9 +60,21 @@ h4{
 
 /**Header**/
 
-.navbar{
+.custom-toggler .navbar-toggler-icon {
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(104, 41, 45, 1)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+#wrapper-navbar{
 	background-color: map-get($colors,header);
-	color:map-get($colors,text);
+	
+	a{
+		color:map-get($colors,primary);	
+	}
+
+	.navbar-toggler{
+		color:map-get($colors,primary);	
+	}
+
+
 }
 
 /**Home**/
@@ -300,9 +312,4 @@ footer{
 		}
 
 	}
-
-
-
-
-
 }
