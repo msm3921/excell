@@ -33,3 +33,32 @@ function add_child_theme_textdomain() {
     load_child_theme_textdomain( 'excell-contractors', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
+
+//Truncate a paragrah to not cut off words
+function truncate_string ($string, $maxlength, $extension) {
+    
+    // Set the replacement for the "string break" in the wordwrap function
+    $cutmarker = "**cut_here**";
+
+    // Checking if the given string is longer than $maxlength
+    if (strlen($string) > $maxlength) {
+
+        // Using wordwrap() to set the cutmarker
+        // NOTE: wordwrap (PHP 4 >= 4.0.2, PHP 5)
+        $string = wordwrap($string, $maxlength, $cutmarker);
+
+        // Exploding the string at the cutmarker, set by wordwrap()
+        $string = explode($cutmarker, $string);
+
+        // Adding $extension to the first value of the array $string, returned by explode()
+        $string = $string[0] . $extension;
+    }
+
+    // returning $string
+    return $string;
+
+}
+
+// This Will output:
+// "Truncates a string at a certain position without &#65533;cutting&#65533; ..."
+echo truncate_string ($string, $maxlength, $extension);
