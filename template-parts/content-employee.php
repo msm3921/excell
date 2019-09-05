@@ -1,15 +1,15 @@
 <?php 
 ///Advanced Custom Fields
-$employee_title		                = get_field('employee_title');
- ?>
+$employee_title		                = get_field('employee_title');?>
 
-<div id="employee">
+<div id="employees">
     <?php 
         $loop = new WP_Query( array( 'post_type' => 'employee', 'orderby' => 'post_id', 'order' => 'ASC' ) );
     ?>
-
         <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+            <div class="employee">
             <?php 
+            
                     $image = get_field('employee_image');
                     $name  = get_field('employee_name');
                     $title = get_field('employee_title');
@@ -17,7 +17,6 @@ $employee_title		                = get_field('employee_title');
                     if( !empty($image) ): ?>
                     <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
             
-
                     <div class=employee-content>
                         <h5><?php echo $name?></h5>
                         <h6><?php echo $title?></h6>
@@ -26,8 +25,9 @@ $employee_title		                = get_field('employee_title');
 
                     <button><p>More on <?php echo truncate_string($name,1, ' >>'); ?></p></button>
             <?php endif; ?> 
+            </div>
     <?php endwhile; wp_reset_query(); ?>
-</div> <!--employee-->
+</div> <!--employees-->
 
 
 <?php 
