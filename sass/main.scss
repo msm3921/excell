@@ -67,6 +67,7 @@ h4{
   }
 #wrapper-navbar{
 	background-color: map-get($colors,header);
+	border-bottom: solid 5px map-get($colors,primary);
 	
 	a{
 		color:map-get($colors,primary);	
@@ -74,6 +75,10 @@ h4{
 
 	.navbar-toggler{
 		color:map-get($colors,primary);	
+	}
+
+	img{
+		margin-left: -30px;
 	}
 
 }
@@ -256,7 +261,6 @@ h4{
 			padding-left: 25px;  
 		}
 
-
 		button{
 			grid-column: 2 / -1;
 			grid-row: 6 / span 2;
@@ -269,12 +273,14 @@ h4{
 			border: 1px solid #787878;
 			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 			border-radius: 100px;
-
+		
 			p{
 				margin:0px;
 				color:map-get($colors,white);
 			}
 		}
+		
+
 }
 
 
@@ -291,6 +297,51 @@ h4{
 			color: map-get($colors ,primary);
 			padding:0px 25px;
 		}
+}
+
+#contact{
+
+		.form{
+		display:grid;
+		justify-content: center;
+		justify-items: center;
+		}
+
+		p:first-child{
+
+			padding-top: 25px;
+			font-weight: bold;
+		}
+
+		.wpcf7{
+			display:grid;
+			justify-content: center;
+
+			.wpcf7-form{
+				margin: 25px;
+
+				p{
+				display:grid;
+					justify-content: center;
+				}
+			}
+
+			.wpcf7-submit{
+				width:350px !important;
+				grid-column: 2 / -1;
+				grid-row: 6 / span 2;
+				display:grid;
+				align-self: center;
+				align-content: center;
+				height: 35px;
+				width:285px;
+				background: linear-gradient(97.18deg, #68292D 2.42%, #3E0B08 76.11%), #FFFFFF;
+				border: 1px solid #787878;
+				box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+				border-radius: 100px;
+				color:map-get($colors,white);
+			}
+		}	
 }
 
 
@@ -412,6 +463,17 @@ a{
 				grid-column: 2 / -1;
 			}
 		}
+
+		#contact{
+
+			display:grid;
+			grid-template-columns: repeat(2,1fr);
+
+			.contact-info{
+				justify-self: center;
+				padding:50px;
+			}
+		}
 }
 
 	footer {
@@ -462,6 +524,17 @@ a{
 
 		div:nth-of-type(2){
 			grid-column: 3 / span 2;
+		}
+	}
+
+	#contact{
+
+		.form{
+			margin-left: 150px;
+		}
+		
+		.contact-info{
+			margin-right: 150px;
 		}
 	}
 }

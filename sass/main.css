@@ -53,6 +53,7 @@ h4 {
 
 #wrapper-navbar {
   background-color: #F1ECE5;
+  border-bottom: solid 5px #68292D;
 }
 
 #wrapper-navbar a {
@@ -61,6 +62,10 @@ h4 {
 
 #wrapper-navbar .navbar-toggler {
   color: #68292D;
+}
+
+#wrapper-navbar img {
+  margin-left: -30px;
 }
 
 /**Home**/
@@ -314,6 +319,62 @@ h4 {
   padding: 0px 25px;
 }
 
+#contact .form {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+}
+
+#contact p:first-child {
+  padding-top: 25px;
+  font-weight: bold;
+}
+
+#contact .wpcf7 {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#contact .wpcf7 .wpcf7-form {
+  margin: 25px;
+}
+
+#contact .wpcf7 .wpcf7-form p {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#contact .wpcf7 .wpcf7-submit {
+  width: 350px !important;
+  grid-column: 2 / -1;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 2;
+  grid-row: 6 / span 2;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 35px;
+  width: 285px;
+  background: linear-gradient(97.18deg, #68292D 2.42%, #3E0B08 76.11%), #FFFFFF;
+  border: 1px solid #787878;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 100px;
+  color: #fff;
+}
+
 /**Footer**/
 footer {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(241, 236, 229, 0.5)), color-stop(98.44%, #E6DBC9));
@@ -433,6 +494,17 @@ footer a {
   #list div {
     grid-column: 2 / -1;
   }
+  #contact {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  #contact .contact-info {
+    -ms-grid-column-align: center;
+        justify-self: center;
+    padding: 50px;
+  }
 }
 
 footer nav ul {
@@ -484,6 +556,12 @@ footer nav li:nth-of-type(5) {
     -ms-grid-column: 3;
     -ms-grid-column-span: 2;
     grid-column: 3 / span 2;
+  }
+  #contact .form {
+    margin-left: 150px;
+  }
+  #contact .contact-info {
+    margin-right: 150px;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -63,3 +63,6 @@ function truncate_string ($string, $maxlength, $extension) {
 // This Will output:
 // "Truncates a string at a certain position without &#65533;cutting&#65533; ..."
 echo truncate_string ($string, $maxlength, $extension);
+
+
+add_theme_support( 'custom-logo' );
