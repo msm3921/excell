@@ -40,5 +40,21 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php wp_footer(); ?>
 
+
+<?php 
+        $loop = new WP_Query( array( 'post_type' => 'project', 'orderby' => 'post_name', 'order' => 'ASC' ) );
+    ?>
+        <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+            <?php 
+                    $shortcode = get_field('shortcode');              
+             ?> 
+					<!-- MODAL 2 -->
+						<div class="modal fade" id="myModal">
+							<?php get_template_part ('template-parts/content','modal'); ?>
+						</div><!-- modal 2 -->
+ 		<?php endwhile; wp_reset_query(); ?>
+
 </body>
+
+
 
