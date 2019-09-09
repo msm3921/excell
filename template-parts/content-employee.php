@@ -20,11 +20,12 @@ $employee_title		                = get_field('employee_title');?>
                     <div class=employee-content>
                         <h5><?php echo $name?></h5>
                         <h6><?php echo $title?></h6>
-                        <p><?php echo truncate_string($description,150, ' ...'); ?></p>
+                        <p class="show-this-on-click"><?php echo $description;?></p>
                     </div>
 
-                    <button><p>More on <?php echo truncate_string($name,1, ' >>'); ?></p></button>
-            <?php endif; ?> 
+                    <button class="readmore hide-me"><p>More on <?php echo truncate_string($name,1, ' &gt&gt'); ?></p></button>
+                    <button class=" readless hide-me"><p>Less on <?php echo truncate_string($name,1, ' &gt&gt'); ?></p></button>
+                    <?php endif; ?> 
             </div>
     <?php endwhile; wp_reset_query(); ?>
 </div> <!--employees-->

@@ -8,6 +8,6 @@ get_header(); ?>
 
 <?php get_template_part('template-parts/content','offer');?>
 
-<?php echo do_shortcode("[gkit id=11]"); ?>
+<?php get_template_part('template-parts/content','projects');?>
 
 <?php get_footer(); ?>

@@ -61,7 +61,11 @@ h4{
 }
 
 .hide-me{
-	display:none;
+	display:none !important;
+}
+
+.stubborn{
+	display:block !important;
 }
 
 /**Header**/
@@ -90,7 +94,8 @@ h4{
 /**Home**/
 #home{
 		display:grid;
-		grid-template-columns: repeat(4,1fr);
+		//grid-template-columns: repeat(4,1fr);
+		grid-template-columns: repeat( auto-fit, minmax(4, 1fr) );
 		grid-template-rows:repeat(4,1fr); 
 		margin:0px;
 		padding:0px;
@@ -110,7 +115,7 @@ h4{
 
 		.main{
 			background-color: map-get($colors,primary2);
-			clip-path: polygon(49% 1%, 100% 1%, 100% 100%, 0% 100%, 0% 55%);
+			clip-path: polygon(45% 25%, 100% 25%, 100% 100%, 0% 100%, 0% 65%);
 			display:grid;
 			grid-column: 1 / -1;
 			grid-row: 3 / span 2;
@@ -121,23 +126,24 @@ h4{
 
 		h3{
 			color:map-get($colors,header);
-			font-size:1.5em;
+			font-size:1em;
 			margin:10px;
 			padding: 15px;
 			text-align: right;
-			justify-self:top;
-			align-self: top;
+			align-self: center;
+			justify-self: center;
 			grid-column: 2 / span 2;
+			grid-row: 1 /span 2;
 		}
 
 		p{
 			color:map-get($colors,white);
-			font-size: .75 em;
+			font-size: .75em;
 			padding-left: 30px;
 			text-align: left;
 			justify-self:end;
 			align-self: end;
-			grid-column: span 2;
+			grid-column: 1 / span 2;
 			grid-row: 2 / span 2;
 			margin-bottom: 0px;
 
@@ -239,19 +245,18 @@ h4{
 		img{
 			object-fit: cover;
 			object-position: top;
-			grid-column: 1 / span 4;
+			grid-column: 1 / -1;
 			grid-row: 1 / span 5;
-			width:175px;
-			height:175px;
+			width:325px;
+			height:325px;
 			border-radius: 100%;
-			margin-top: 25px;  
-			//max-width: 40%;
+			margin-top: 25px; 
 		}
 
 		.employee-content{
-			grid-column: 4 / -1;
-			grid-row: 1 / span 7;
-			margin-left: 30px;
+			grid-column: 1 / -1;
+			grid-row: 4 / span 7;
+			margin-top: 45px;
 			padding-bottom: 30px;
 		}
 
@@ -267,7 +272,6 @@ h4{
 		}
 
 		p{
-			//color:map-get($colors ,employeetext);
 			font-weight: bold;
 			font-size: .75em;
 			padding-left: 25px;  
@@ -375,35 +379,35 @@ h4{
 }
 
 // /**Projects**/
-// 	#projects{
 
-// 		#gallery{
-// 			display:grid;
-// 			grid-template-columns: repeat(4,1fr);
-// 		}
+	#projects{
+		.project{
+			display:grid;
+			grid-template-columns: repeat(6,1fr);
 
-// 		.ftg-items{
-// 			margin-bottom: 50px;
-// 		}
+			.project-image{
+				grid-column: 2 / span 4;
+			}
 
-// 		.tile-inner{
-// 			border-radius: 10px !important;
-// 		}
+			img{
+				border-radius: 10px;
+				width:100%;
+				height: 250px;
+			}
 
-// 		a{
-// 			margin-top:50px !important;
-// 			margin-bottom: 50px !important;
-// 		}
-
-// 		h3{
-// 			padding-top: 5px;
-// 			padding-bottom: 5px;
-// 		}
-
-// 		.details{
-// 			top:75%; 
-// 		}
-// 	}
+			.project-content{
+				grid-column: 1 / -1;
+				justify-self: center;
+				margin:25px 0px;
+				
+				h5{
+					color:map-get($colors,primary);
+					text-transform: uppercase;
+					text-align: center;
+				}
+			}
+		}
+	}
 
 /**Footer**/
 
@@ -453,15 +457,6 @@ footer{
 
 
 /*MEDIA QUERY MIN WIDTH 768*/
-// @media (min-width: 400px) {
-// 	#projects{
-// 		.details{
-// 			top:45%; 
-// 		}
-// 	}
-// }
-
-/*MEDIA QUERY MIN WIDTH 768*/
 @media (min-width: 768px) {
 		#home{
 
@@ -475,7 +470,6 @@ footer{
 
 			.main{
 				background-color: map-get($colors,primary2);
-				clip-path: polygon(65% 15%, 100% 15%, 100% 100%, 0% 100%, 0% 65%);
 				grid-column: 1 / -1;
 				grid-row: 3 / span 2;
 				padding:0px 15px 15px;
@@ -487,8 +481,6 @@ footer{
 				padding: 15px;
 				grid-column: 2 / span 2;
 				font-size: 1.5em;
-				text-align: end;
-				align-self:end;
 			}
 
 			p{
@@ -514,6 +506,7 @@ footer{
 			img{
 				grid-column: 1 / span 4;
 				grid-row: 1 / span 5;
+				margin-top: 50px;
 				width:300px;
 				height:300px; 
 			}
@@ -539,10 +532,7 @@ footer{
 			}
 		
 			button{
-				grid-column: 4 / -1;
-				grid-row: 6 / span 2;
-				height: 35px;
-				width:285px;		
+				display:none;		
 			}
 		}
 		#list{
@@ -569,16 +559,41 @@ footer{
 				display:block;
 			}
 			}
+
 		// /**Projects**/
-		// #projects{
 
-		// 	a{
-		// 		margin-top:50px !important;
-		// 	}
+	#projects{
+			display:grid;
+			grid-template-columns: repeat(4,1fr);
 
-		// 	.details{
-		//  		top:55%; 
-		//  	}
+		.project{
+
+			grid-column: 1 / span 2;
+
+			.project-image{
+				grid-column: 1 / span 2;
+			}
+
+			img{
+				border-radius: 10px;
+				width:100%;
+				height: 250px;
+			}
+
+			.project-content{
+				grid-column: 1 / span2;
+				justify-self: center;
+				margin:25px 0px;
+				
+				h5{
+					color:map-get($colors,primary);
+					text-transform: uppercase;
+					text-align: center;
+				}
+			}
+		}
+	}
+	
 
 	footer {
 		nav { 
@@ -595,8 +610,19 @@ footer{
 
 }
 
-/*MEDIA QUERY MIN WIDTH 1200*/
-@media (min-width: 1200px) {
+/*MEDIA QUERY MIN WIDTH 1024*/
+@media (min-width: 1024px) {
+		#home{
+			h3{
+				font-size: 1.75em;
+			}
+
+			p{
+				font-size: 1.5em;
+			}
+
+		}
+
 
 		/***Hero***/
 		#hero{
@@ -629,6 +655,46 @@ footer{
 
 			div:nth-of-type(2){
 				grid-column: 3 / span 2;
+			}
+		}
+
+		#employees {
+			padding:25px;
+			overflow: hidden;
+	
+			.employee{
+				display: grid;	
+				grid-template-columns: repeat(8,1fr);
+				grid-template-rows: repeat(7,1fr); 
+				padding-bottom: 25px;
+			}
+	
+			img{
+				margin-top: 25px;
+				grid-column: 2 / -1;
+			}
+	
+			.employee-content{
+				grid-column: 4 / -1;
+				grid-row: 1 / span 7;
+				margin-left: 30px;
+				padding-bottom: 30px;
+			}
+	
+			h5{
+				font-size: 1.5em;
+			}
+			h6{
+				font-size: 1.25em;
+				padding-bottom: 15px 20px;
+			}
+	
+			p{
+				font-size: 1em;
+			}
+	
+			button{
+				display: none;
 			}
 		}
 
