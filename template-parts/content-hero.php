@@ -11,5 +11,5 @@ $hero_text			        = get_field('hero_text');
 
             <?php endif; ?>
 
-            <h2><?php echo $hero_text?></h2>
+            <h2 class="noselect"><?php echo $hero_text?></h2>
 </div> <!--hero-->

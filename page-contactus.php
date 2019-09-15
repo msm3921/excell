@@ -7,7 +7,7 @@ get_header(); ?>
 <?php 
 ///Advanced Custom Fields
 $contact_info			= get_field('contact_info');
-$hidden_image           = get_field('hidden_image');
+$triangle_image           = get_field('triangle_image');
  ?>
 
     <div id="contact">
@@ -17,13 +17,10 @@ $hidden_image           = get_field('hidden_image');
         </div>
         <div class="contact-info">
             <p><?php echo $contact_info;?> </p>
+            
         </div>
-        <div class="hide-me"
-            <?php if(!empty($hidden_image)) : ?>
-
-            <img src="<?php echo $hidden_image['url']; ?>" alt="<?php echo $hidden_image['alt']; ?>">
-
-            <?php endif; ?>
+        <div class="triangle">
+            <img src="<?php echo $triangle_image['url']; ?>" alt="<?php echo $triangle_image['alt']; ?>">
         </div>
     </div>
 <?php get_footer(); ?>
