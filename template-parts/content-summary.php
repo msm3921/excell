@@ -5,6 +5,6 @@ $summary_text			        = get_field('summary_text');
  ?>
 
 <div id="summary">
-            <h4><?php echo $summary_header?></h4>
+            <h4 class="summary-header"><?php echo $summary_header?></h4>
             <p><?php echo $summary_text?></p>
 </div> <!--summary-->

@@ -1,38 +1,28 @@
-<?php 
-///Advanced Custom Fields
-$employee_title		                = get_field('employee_title');?>
-
-<div id="employees">
-    <?php 
-        $loop = new WP_Query( array( 'post_type' => 'employee', 'orderby' => 'post_id', 'order' => 'ASC' ) );
-    ?>
-        <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
-            <div class="employee">
-            <?php 
+<div id="employee-page">
+    <div id="bio-button">
+            <button><a href="<?php echo site_url('biographies'); ?>">Biographies</a></button>
             
-                    $image = get_field('employee_image');
-                    $name  = get_field('employee_name');
-                    $title = get_field('employee_title');
-                    $description = get_field('employee_description');
-                    if( !empty($image) ): ?>
-                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-            
-                    <div class=employee-content>
-                        <h5><?php echo $name?></h5>
-                        <h6><?php echo $title?></h6>
-                        <p class="show-this-on-click"><?php echo $description;?></p>
-                    </div>
+    </div>
 
-                    <button class="readmore hide-me"><p>More on <?php echo truncate_string($name,1, ' &gt&gt'); ?></p></button>
-                    <button class=" readless hide-me"><p>Less on <?php echo truncate_string($name,1, ' &gt&gt'); ?></p></button>
-                    <?php endif; ?> 
-            </div>
-    <?php endwhile; wp_reset_query(); ?>
-</div> <!--employees-->
-
-
-<?php 
-$image = get_field('image');
-if( !empty($image) ): ?>
-  <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-<?php endif; ?>
+    <div id="employees">
+        <?php 
+            $loop = new WP_Query( array( 'post_type' => 'employee', 'orderby' => 'post_id', 'order' => 'ASC' ) );
+        ?>
+            <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+                <div class="employee">
+                <?php 
+                
+                        $image = get_field('employee_image');
+                        $name  = get_field('employee_name');
+                        $title = get_field('employee_title');
+                if( !empty($image) ): ?>
+                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                        <div class="employee-content">
+                            <h5><?php echo $name?></h5>
+                            <h6><?php echo $title?></h6>
+                        </div><!--employee-content-->    
+                <?php endif; ?> 
+            </div><!--employee-->
+        <?php endwhile; wp_reset_query(); ?>
+    </div> <!--employees-->
+</div> <!--employee-page-->
